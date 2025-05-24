@@ -1,6 +1,8 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { containerFull, goBack } from '../../../CommonCss/pagecss';
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { containerFull, goBack, logo1 } from '../../../CommonCss/pagecss';
 import {MaterialIcons} from 'react-native-vector-icons';
+import logo from '../../../../assets/logo.png';
+import { formbtn, formHead2, formInput } from '../../../CommonCss/formCss';
 
 const SignUp_EnterEmail = ({navigation}) => {
   return (
@@ -14,7 +16,13 @@ const SignUp_EnterEmail = ({navigation}) => {
           marginLeft: 5,
         }}>Go Back</Text>
       </TouchableOpacity>
-      <Text>SignUp_EnterEmail</Text>
+      <Image source={logo} style={logo1} />
+      <Text style={formHead2}>Create a new account</Text>
+      <TextInput placeholder='Enter Your Email' style={formInput} />
+      <Text
+        style={formbtn}
+        onPress={() => navigation.navigate('SignUp_EnterVerificationCode')}
+      >Next</Text>
     </View>
   )
 }

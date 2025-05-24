@@ -1,10 +1,30 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import {MaterialIcons} from 'react-native-vector-icons';
+import logo from '../../../../assets/logo.png';
+import { containerFull, goBack, logo1 } from '../../../CommonCss/pagecss'
+import { formbtn, formHead2, formInput } from '../../../CommonCss/formCss'
+import { Image } from 'react-native';
 
-const SignUp_EnterPassword = () => {
+const SignUp_EnterPassword = ({navigation}) => {
   return (
-    <View>
-      <Text>SignUp_EnterPassword</Text>
+    <View style={containerFull}>
+      <TouchableOpacity onPress={() => navigation.navigate('SignUp_EnterUserName')} style={goBack}>
+        <MaterialIcons name="arrow-back" color="gray" size={24} />
+        <Text style={{
+          color: 'gray',
+          fontSize: 16,
+          fontWeight: 'bold',
+          marginLeft: 5,
+        }}>Go Back</Text>
+      </TouchableOpacity>
+      <Image source={logo} style={logo1} />
+      <Text style={formHead2}>Create a Password</Text>
+      <TextInput placeholder='Enter password' style={formInput} secureTextEntry/>
+      <TextInput placeholder='confirm password' style={formInput} secureTextEntry/>
+      <Text
+        style={formbtn}
+        onPress={() => navigation.navigate('SignUp_AccountCreated')}
+      >Next</Text>
     </View>
   )
 }
