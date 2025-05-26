@@ -1,20 +1,20 @@
 import { StatusBar, StyleSheet, Text, View } from 'react-native';
 import BottomNavBar from '../../Components/BottomNavBar'
 import TopNavBar from '../../Components/TopNavBar'
-import FollowersRandomPost from '../../Components/FollowersRandomPost'
+import { formHead } from '../../CommonCss/formCss';
 
-const MainPage = ({navigation}) => {
+const UserProfilePage = ({navigation}) => {
   return (
     <View style={styles.container}>
       <StatusBar />
-      <TopNavBar navigation={navigation} page="Main Page"/>
-      <FollowersRandomPost />
-      <BottomNavBar navigation={navigation} page="MainPage"/>
+      <TopNavBar navigation={navigation}/>
+      <BottomNavBar navigation={navigation} page="UserProfilePage"/>
+      <Text style={formHead}>Profile Page</Text>
     </View>
   )
 }
 
-export default MainPage
+export default UserProfilePage
 
 const styles = StyleSheet.create({
   container: {

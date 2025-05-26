@@ -14,6 +14,9 @@ import ForgotPassword_EnterEmail from './src/Screens/Auth/ForgotPassword/ForgotP
 import ForgotPassword_EnterVerification from './src/Screens/Auth/ForgotPassword/ForgotPassword_EnterVerification';
 import MainPage from './src/Screens/MainPage/MainPage';
 import ALLChats from './src/Screens/ChatSection/ALLChats';
+import SearchUserPage from './src/Screens/MainPage/SearchUserPage';
+import NotificationPage from './src/Screens/MainPage/NotificationPage';
+import UserProfilePage from './src/Screens/Profile/UserProfilePage';
 
 const Stack = createNativeStackNavigator();
 
@@ -40,6 +43,9 @@ export default function App() {
 
         <Stack.Screen name="MainPage" component={MainPage} /> 
         <Stack.Screen name="ALLChats" component={ALLChats} options={{animation: 'slide_from_left'}}/> 
+        <Stack.Screen name="SearchUserPage" component={SearchUserPage} options={{animation: 'slide_from_bottom'}}/> 
+        <Stack.Screen name="NotificationPage" component={NotificationPage} options={{animation: 'slide_from_left'}}/> 
+        <Stack.Screen name="UserProfilePage" component={UserProfilePage} options={{animation: 'slide_from_right'}}/> 
       </Stack.Navigator>
     </NavigationContainer>
   );

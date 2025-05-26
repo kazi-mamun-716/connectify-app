@@ -4,7 +4,7 @@ import React from 'react'
 const Chat_Card = ({name, lastMessage, image, time}) => {
   return (
     <View style={styles.container}>
-            <Image source={{uri: image}} style={styles.chat_profile_image}/>
+        <Image source={{uri: image}} style={styles.chat_profile_image}/>
         <View style={styles.c1}>
             <Text style={styles.chat_name}>{name}</Text>
             <Text style={styles.lastMessage}>{lastMessage}</Text>

@@ -4,11 +4,13 @@ import { StyleSheet } from 'react-native';
 import { icons1, logo2 } from '../CommonCss/pagecss';
 import {Ionicons} from 'react-native-vector-icons';
 
-const TopNavBar = ({navigation}) => {
+const TopNavBar = ({navigation, page}) => {
   return (
     <View style={styles.container}>
       <Image source={logo} style={logo2}/>
-      <Ionicons name="chatbubble-ellipses-outline" color="#000" size={24} style={icons1} onPress={()=>navigation.navigate("ALLChats")}/>
+      {
+        page === "Main Page" && <Ionicons name="chatbubble-ellipses-outline" color="#000" size={24} style={icons1} onPress={()=>navigation.navigate("ALLChats")}/>
+      }
     </View>
   )
 }
@@ -24,7 +26,6 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         top: 0,
         position: 'absolute',
-        zIndex: 100,
         backgroundColor: '#111111',
         paddingRight:10
     }

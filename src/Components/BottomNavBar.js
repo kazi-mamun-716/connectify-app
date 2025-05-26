@@ -1,14 +1,30 @@
 import { View, Text, StyleSheet } from 'react-native'
-import {Entypo, AntDesign, FontAwesome, EvilIcons} from 'react-native-vector-icons';
+import {Entypo, AntDesign, Ionicons, EvilIcons} from 'react-native-vector-icons';
 import { icons1 } from '../CommonCss/pagecss';
 
-const BottomNavBar = () => {
+const BottomNavBar = ({navigation, page}) => {
   return (
     <View style={styles.container}>
-      <Entypo name="home" color="#000" size={24} style={icons1}/>
-      <AntDesign name="search1" color="#000" size={24} style={icons1}/>
-      <FontAwesome name="heartbeat" color="#000" size={24} style={icons1}/>
-      <EvilIcons name="user" color="#000" size={24} style={icons1}/>
+      {
+        page === 'MainPage' ? 
+        <Entypo name="home" color="#000" size={24} style={styles.activeIcons1} onPress={()=>navigation.navigate('MainPage')}/>
+        : <Entypo name="home" color="#888" size={24} style={icons1} onPress={()=>navigation.navigate('MainPage')} />
+      }
+      {
+        page === 'SearchUserPage' ? 
+        <AntDesign name="search1" color="#000" size={24} style={styles.activeIcons1} onPress={()=>navigation.navigate('SearchUserPage')}/>
+        : <AntDesign name="search1" color="#888" size={24} style={icons1} onPress={()=>navigation.navigate('SearchUserPage')} />
+      }
+      {
+        page === 'NotificationPage' ? 
+        <Ionicons name="notifications" color="#000" size={24} style={styles.activeIcons1} onPress={()=>navigation.navigate('NotificationPage')}/>
+        : <Ionicons name="notifications" color="#888" size={24} style={icons1} onPress={()=>navigation.navigate('NotificationPage')} />
+      }
+      {
+        page === 'UserProfilePage' ? 
+        <EvilIcons name="user" color="#000" size={24} style={styles.activeIcons1} onPress={()=>navigation.navigate('UserProfilePage')}/>
+        : <EvilIcons name="user" color="#888" size={24} style={icons1} onPress={()=>navigation.navigate('UserProfilePage')} />
+      }
     </View>
   )
 }
@@ -27,5 +43,12 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         paddingVertical: 10,
+        alignItems: 'center',
     },
+    activeIcons1:{
+        color: '#000',
+        backgroundColor: '#fff',
+        padding: 5,
+        borderRadius: 50,
+    }
 })
