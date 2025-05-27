@@ -2,7 +2,7 @@ import { View, Text, Image } from 'react-native'
 import logo from '../../assets/logo.png';
 import { StyleSheet } from 'react-native';
 import { icons1, logo2 } from '../CommonCss/pagecss';
-import {Ionicons} from 'react-native-vector-icons';
+import {Ionicons, AntDesign} from 'react-native-vector-icons';
 
 const TopNavBar = ({navigation, page}) => {
   return (
@@ -10,6 +10,9 @@ const TopNavBar = ({navigation, page}) => {
       <Image source={logo} style={logo2}/>
       {
         page === "Main Page" && <Ionicons name="chatbubble-ellipses-outline" color="#000" size={24} style={icons1} onPress={()=>navigation.navigate("ALLChats")}/>
+      }
+      {
+        page === "UserProfilePage" && <AntDesign name="setting" color="#000" size={24} style={icons1} onPress={()=>navigation.navigate("Setting")}/>
       }
     </View>
   )
